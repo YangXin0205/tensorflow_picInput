@@ -4,7 +4,7 @@ import os
 import numpy as np
 
 #数据集地址
-path='E:\\data\\dataset\\flower_photos\\'
+path='E:\\data\\dataset\\man_woman\\train\\'
 
 w=100
 h=100
@@ -24,7 +24,7 @@ def read_img(path):
             imgs.append(img)
             labels.append(idx)
     return np.asarray(imgs,np.float32),np.asarray(labels,np.int32)
-read_img(path)
+
 
 def get_batch ():
     data,label=read_img(path)
@@ -54,3 +54,4 @@ def minibatches(inputs=None, targets=None, batch_size=None, shuffle=False):
         else:
             excerpt = slice(start_idx, start_idx + batch_size)
         yield inputs[excerpt], targets[excerpt]
+
